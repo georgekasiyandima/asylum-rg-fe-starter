@@ -1,770 +1,259 @@
-@main-color: #404C4A;
+@main-color: #404c4a;
 @secondary-color: #707070;
-@white: #FFFFFF;
-@mobile-small: ~"(min-width: 320px) and (max-width: 375px)";
-@mobile-medium: ~"(min-width: 376px) and (max-width: 414px)";
-@mobile-large: ~"(min-width: 415px) and (max-width: 480px)";
-@tablet-small: ~"(min-width: 481px) and (max-width: 768px)";
-@tablet-large: ~"(min-width: 769px) and (max-width: 1024px)";
-@laptop: ~"(min-width: 1025px) and (max-width: 1280px)";
+@white: #ffffff;
+@background-color: #f5f5f5;
+@font-family-main: 'acumin';
+@font-size-stat: 1.6rem;
+@font-size-graph-text: 1.4rem;
 
+/*Background */
+body {
+  background-color: @background-color;
+  font-family: @font-family-main;
+  margin: 0;
+}
+
+/* Header Section */
 .header {
-    background-color: @main-color;
-    display:flex;
+  background-color: #404c4a;
     text-align: center;
     width: 100%;
     height: 20vh;
     margin-bottom: 10%;
+ 
 }
 
-.hrf-logo-img-container img {
-    height: 64px;
-    width: 98px;
-    margin-left: 15%;
+.header-logo {
+  display: flex;
+  align-items: center;
 }
 
-.header-text-container {
-    text-align: center;
-    width: 100%;
-    align-items: center;
+.header-logo img {
+  height: 60px; 
+  margin-right: 20px; 
 }
 
-.header-text-container h1 {
-    font-size: 3rem;
-    color: @white;
+.header h1 {
+  font-size: 4rem;
+    color: #ffffff;
     font-family: 'moneta';
 }
 
-.header-text-container h3 {
-    font-family: 'beatrice regular';
-    color: @white;
-    font-size: 1.2rem;
+.header h3 {
+  font-size: 1.3rem;
+  color: @white;
+  font-family: "beatrice regular";
+
 }
 
-// .graphs-section {
-//  ADD THIS BACK IN WHEN YOU HAVE THE GRAPHS SECTION
-// }
+/* Navbar */
+.navbar {
+  display: flex;
+  gap: 2rem;
+}
 
+.navbar a {
+  color: @white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+/* Graphs Section */
+.graphs-section {
+  display: flex;
+  justify-content: space-evenly;
+  
+}
+
+/* Grant Rates by Office */
+.grant-rates-by-office-graph-container {
+  text-align: center;
+  height: 165px;
+  font-size: 1.5rem;
+  font-family: 'acumin';
+}
+
+.grant-rates-by-office-graph-container img {
+  width: 320px; 
+  height: 165px;
+  margin-bottom: 10%;
+}
+
+.grant-rates-by-office-graph-container p {
+  margin-top: 0;
+  margin-bottom: 1em;
+  font-size: 1.5rem;
+  font-family: 'acumin';
+}
+
+/* Grant Rates by Nationality */
+.grant-rates-by-nationality-container {
+  text-align: center;
+  margin-bottom: 3%;
+  margin-left: -15px;
+  font-size: 1.5rem;
+  font-family: "acumin";
+  
+
+}
+
+.grant-rates-by-nationality-container img {
+  width: 200px;
+  height: 175px;
+  margin-bottom: 7%;
+  margin-left: -15px;
+}
+
+.grant-rates-by-nationality-container p {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  font-family: 'acumin';
+}
+
+/* Grant Rates Over Time */
+.grant-rates-over-time-container {
+  text-align: center;
+  height: 165px;
+  font-size: 1.5rem;
+  font-family: "acumin";
+}
+
+.grant-rates-over-time-container img {
+  height: 165px;
+  width: 300px;
+  margin-bottom: 10%;
+}
+
+.grant-rates-over-time-container p {
+  margin-top: 0;
+  margin-bottom: 1em;
+  font-size: 1.5rem;
+  font-family: 'acumin';
+}
+
+/* Button Section */
 .view-more-data-btn-container {
-    height: 44px;
-    width: 180px;
-    margin: 0 auto;
-    text-align: center;
-    margin-bottom: 10%;
+  height: 44px;
+  width: 300px;
+  text-align: center;
+  margin: 0 auto 10%;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
 }
 
+.view-data-btn.ant-btn, .download-data-btn.ant-btn {
+  background-color: #404C4A;  
+  color: #FFFFFF;             
+  font-size: 1rem;                       
+  cursor: pointer;                     
+}
+
+
+/* Middle Section */
 .middle-section {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .hrf-img {
-    height: 339px;
-    width: 648px;
-    border-radius: 10px;
+  height: 339px;
+  width: 648px;
+  border-radius: 10px;
+  object-fit: cover;  
 }
 
 .middle-section-text-container {
-    width: 700px;
-    text-align: center;
+  max-width: 40%; 
+  text-align: left; 
 }
 
 .middle-section-text-container h3 {
-    font-family: 'acumin';
-    font-size: 1.4rem;
+  font-family: "acumin";
+  font-size: 1.4rem;
+  
 }
 
-// .bottom-section {
-//      ADD THIS BACK IN WHEN YOU HAVE A BOTTOM SECTION
-// }
+.middle-section-text-container p {
+  font-size: 1.1rem; 
+  line-height: 1.6;   
+}
+
+
+
+/* Bottom Section */
+.bottom-section {
+  text-align: center;
+  margin-top: 10px;
+
+  h1 {
+    font-family: 'acumin';
+    font-size: 3.5rem;
+    margin-bottom: 10%;
+    margin-top: 5%;
+  }
+
+  /* Stats container */
+  .stats-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 5%;
+    
+    /* Specific Stat Containers */
+    .first-stat-container, .second-stat-container, .third-stat-container {
+      width: 30%;
+      text-align: center;
+      padding: 20px;
+
+      h2 {
+        font-size: 3rem;
+        font-family: 'moneta';
+      }
+
+      h3 {
+        font-size: 1.4rem;
+        font-family: 'acumin';
+      }
+    }
+  }
+
+  /* Read More Button */
+.read-more-btn {
+  background-color: #404c4a;
+  color: white;
+  font-size: 1rem;
+
+}
+
+/* Back To Top Link */
+.read-more-btn {
+  background-color: #404C4A; 
+  color: #fff; 
+  font-size: 1rem;
+  cursor: pointer;
+  margin-bottom: 60px; 
+}
 
 .back-to-top {
-    width: 8%;
-    font-size: 1.2rem;
-    cursor: pointer;
-    color: black;
-    margin: 5% auto;
+  margin-top: 60px;
+  font-size: 1.4rem;
+  color: #333; 
+  text-align: center;
+  margin-bottom: 60px;
 }
 
-.ant-space-align-center {
-    @media (max-width: 375px) {
-        display: flex;
-        flex-wrap: wrap;
-    }
+.back-to-top a {
+  text-decoration: none;
+  color: inherit;
 }
 
-.ant-btn:hover {
-    border-color: @secondary-color  !important;
+.back-to-top a:hover {
+  text-decoration: underline;
 }
-
-@media @mobile-small {
-    .header {
-        height: 30vh;
-       display: block;
-       position: relative;
-    }
-    .hrf-logo-img-container{
-       height:fit-content;
-       position: absolute;
-       top: 0;
-       left: 0;
-       margin: 2% 2%;
-    }
-
-    .hrf-logo-img-container img {
-        height: 30px;
-        width: 48px;
-       
-    }
-   
-    .header-text-container h1 {
-        font-size: 1.5rem;
-        padding-top: 5%;
-    }
-
-    .header-text-container h3 {
-        font-size: .85rem;
-        width: 85%;
-        margin: 0 auto;
-    }
-
-    .graphs-section {
-        display: block;
-        width: 100%;
-    }
-
-    .grant-rates-by-office-graph-container {
-        margin-top: 20%;
-        margin-bottom: 40%;
-    }
-
-    .grant-rates-by-nationality-container {
-        margin-bottom: 40%;
-    }
-
-    .gr-nationality-img {
-        margin-bottom: 8%;
-    }
-
-    .grant-rates-over-time-container {
-        margin-bottom: 40%;
-    }
-
-    .middle-section {
-        display: flex;
-        flex-wrap: wrap;
-        width: 100%;
-        height: 75vh;
-        background-color: @secondary-color;
-        padding-top: 15%;
-        text-align: center;
-    }
-
-    .hrf-img {
-        height: 169px;
-        width: 324px;
-    }
-
-    .middle-section-text-container {
-        width: 85%;
-        text-align: center;
-        margin: 0 auto;
-       
-    }
-
-    .middle-section-text-container h3 {
-        font-size: .95rem;
-        color: @white;
-    }
-
-    .bottom-section h1 {
-        font-size: 2rem;
-    }
-
-    .data-container {
-        display: flex;
-        flex-wrap: wrap;
-        width: 100%;
-    }
-
-    .first-data-point-container {
-        width: 85%;
-        margin-bottom: 5%;
-    }
-
-    .second-data-point-container {
-        width: 85%;
-        margin-bottom: 5%;
-    }
-
-    .third-data-point-container {
-        width: 85%;
-        margin-bottom: 5%;
-    }
-
-    .back-to-top {
-        width: 35%;
-    }
-
-
-}
-
-@media @mobile-medium {
-    .header {
-        height: 20vh;
-       display: block;
-       position: relative;
-    }
-    .hrf-logo-img-container{
-       height:fit-content;
-       position: absolute;
-       top: 0;
-       left: 0;
-       margin: 2% 2%;
-    }
-
-    .hrf-logo-img-container img {
-        height: 30px;
-        width: 48px;
-       
-    }
-   
-    .header-text-container h1 {
-        font-size: 1.5rem;
-        padding-top: 5%;
-    }
-
-    .header-text-container h3 {
-        font-size: .85rem;
-        width: 85%;
-        margin: 0 auto;
-    }
-
-    .graphs-section {
-        display: block;
-        width: 100%;
-    }
-
-    .grant-rates-by-office-graph-container {
-        margin-top: 20%;
-        margin-bottom: 40%;
-    }
-
-    .grant-rates-by-nationality-container {
-        margin-bottom: 40%;
-    }
-
-    .gr-nationality-img {
-        margin-bottom: 8%;
-    }
-
-    .grant-rates-over-time-container {
-        margin-bottom: 40%;
-    }
-
-    .middle-section {
-        display: flex;
-        flex-wrap: wrap;
-        width: 100%;
-        height: 75vh;
-        background-color: @secondary-color;
-        padding-top: 5%;
-        text-align: center;
-        
-    }
-
-    .hrf-img {
-        height: 197px;
-        width: 378px;
-    }
-
-    .middle-section-text-container {
-        width: 85%;
-       text-align: center;
-        margin: 0 auto;
-    }
-
-    .middle-section-text-container h3 {
-        font-size: 1.1rem;
-        color: @white;
-    }
-
-    .bottom-section h1 {
-        font-size: 2.1rem;
-    }
-
-    .data-container {
-        display: flex;
-        flex-wrap: wrap;
-        width: 100%;
-    }
-
-    .first-data-point-container {
-        width: 85%;
-        margin-bottom: 5%;
-    }
-
-    .second-data-point-container {
-        width: 85%;
-        margin-bottom: 5%;
-    }
-
-    .third-data-point-container {
-        width: 85%;
-        margin-bottom: 5%;
-    }
-
-    .back-to-top {
-        width: 35%;
-    }
-
-    .ant-space-align-center {
-        display: flex;
-        flex-wrap: wrap;
-    }
-}
-
-@media @mobile-large {
-    .header {
-        height: 20vh;
-       display: block;
-       position: relative;
-    }
-    .hrf-logo-img-container{
-       height:fit-content;
-       position: absolute;
-       top: 0;
-       left: 0;
-       margin: 2% 2%;
-    }
-
-    .hrf-logo-img-container img {
-        height: 30px;
-        width: 48px;
-    }
-   
-    .header-text-container h1 {
-        font-size: 1.5rem;
-        padding-top: 5%;
-    }
-
-    .header-text-container h3 {
-        font-size: .85rem;
-        width: 85%;
-        margin: 0 auto;
-    }
-
-    .graphs-section {
-        display: block;
-        width: 100%;
-    }
-
-    .grant-rates-by-office-graph-container {
-        margin-top: 20%;
-        margin-bottom: 40%;
-    }
-
-    .grant-rates-by-nationality-container {
-        margin-bottom: 30%;
-    }
-
-    .gr-nationality-img {
-        margin-bottom: 8%;
-    }
-
-    .grant-rates-over-time-container {
-        margin-bottom: 40%;
-    }
-
-    .middle-section {
-        display: flex;
-        flex-wrap: wrap;
-        width: 100%;
-        height: 75vh;
-        background-color: @secondary-color;
-        padding-top: 5%;
-        text-align: center;
-    }
-
-    .hrf-img {
-        height: 197px;
-        width: 378px;
-    }
-
-    .middle-section-text-container {
-        width: 85%;
-       text-align: center;
-        margin: 0 auto;
-    }
-
-    .middle-section-text-container h3 {
-        font-size: 1.1rem;
-        color: @white;
-    }
-
-    .bottom-section h1 {
-        font-size: 2.1rem;
-    }
-
-    .data-container {
-        display: flex;
-        flex-wrap: wrap;
-        width: 100%;
-    }
-
-    .first-data-point-container {
-        width: 85%;
-        margin-bottom: 5%;
-    }
-
-    .second-data-point-container {
-        width: 85%;
-        margin-bottom: 5%;
-    }
-
-    .third-data-point-container {
-        width: 85%;
-        margin-bottom: 5%;
-    }
-
-    .back-to-top {
-        width: 35%;
-    }
-
-    .ant-space-align-center {
-        display: flex;
-        flex-wrap: wrap;
-    }
-    
-}
-
-@media @tablet-small {
-    .header {
-        height: 30vh;
-       display: block;
-       position: relative;
-    }
-    .hrf-logo-img-container{
-       height:fit-content;
-       position: absolute;
-       top: 0;
-       left: 0;
-       margin: 1% 1%;
-    }
-
-    .hrf-logo-img-container img {
-        height: 66px;
-        width: 108px;
-       
-    }
-   
-    .header-text-container h1 {
-        font-size: 2.5rem;
-        padding-top: 5%;
-    }
-
-    .header-text-container h3 {
-        font-size: 1.3rem;
-        width: 85%;
-        margin: 0 auto;
-    }
-
-    .graphs-section {
-        display: block;
-        width: 100%;
-    }
-
-    .grant-rates-by-office-graph-container {
-        margin-top: 20%;
-        margin-bottom: 40%;
-    }
-
-    .grant-rates-by-nationality-container {
-        margin-bottom: 25%;
-    }
-
-    .gr-nationality-img {
-        margin-bottom: 8%;
-    }
-
-    .grant-rates-over-time-container {
-        margin-bottom: 40%;
-    }
-
-    .middle-section {
-        display: block;
-        width: 100%;
-        height: 75vh;
-        background-color: @secondary-color;
-        padding-top: 10%;
-        text-align: center;
-    }
-
-    .hrf-img {
-        height: 288px;
-        width: 552px;
-    }
-
-    .middle-section-text-container {
-        width: 85%;
-        text-align: center;
-        margin: 0 auto;
-        padding-top: 10%;
-    }
-
-    .middle-section-text-container h3 {
-        font-size: 1.5rem;
-        color: @white;
-    }
-
-    .bottom-section h1 {
-        font-size: 2.7rem;
-    }
-
-    .data-container {
-        display: flex;
-        flex-wrap: wrap;
-        width: 100%;
-    }
-
-    .first-data-point-container {
-        width: 85%;
-        margin-bottom: 5%;
-    }
-
-    .second-data-point-container {
-        width: 85%;
-        margin-bottom: 5%;
-    }
-
-    .third-data-point-container {
-        width: 85%;
-        margin-bottom: 5%;
-    }
-
-    .back-to-top {
-        width: 35%;
-    }
-
-    .ant-space-align-center {
-        display: flex;
-        flex-wrap: wrap;
-    }
-}
-
-@media @tablet-large {
-    .header {
-        height: 30vh;
-       display: block;
-       position: relative;
-    }
-    .hrf-logo-img-container{
-       height:fit-content;
-       position: absolute;
-       top: 0;
-       left: 0;
-       
-    }
-
-    .hrf-logo-img-container img {
-        height: 83px;
-        width: 136px;
-       
-    }
-   
-    .header-text-container h1 {
-        font-size: 3.5rem;
-        padding-top: 5%;
-    }
-
-    .header-text-container h3 {
-        font-size: 1.8rem;
-        width: 85%;
-        margin: 0 auto;
-    }
-
-    .graphs-section {
-        display: block;
-        width: 100%;
-    }
-
-    .grant-rates-by-office-graph-container {
-        margin-top: 20%;
-        margin-bottom: 40%;
-    }
-
-    .grant-rates-by-office-graph-container p {
-        font-size: 2.5rem;
-    }
-
-    .gr-office-img {
-        height: 232px;
-        width: 450px;
-    }
-
-    .grant-rates-by-nationality-container {
-        margin-bottom: 25%;
-    }
-
-    .grant-rates-by-nationality-container p {
-        font-size: 2.5rem;
-    }
-
-    .gr-nationality-img {
-        margin-bottom: 8%;
-        height: 335px;
-        width: 383px;
-    }
-
-    .grant-rates-over-time-container {
-        margin-bottom: 40%;
-    }
-
-    .gr-overtime-img {
-        height: 232px;
-        width: 450px;
-    }
-    .grant-rates-over-time-container p {
-        font-size: 2.5rem;
-    }
-
-    .ant-btn {
-        line-height: 2;
-        width: 172px;
-    }
-
-    .middle-section {
-        display: block;
-        width: 100%;
-        height: 75vh;
-        background-color: @secondary-color;
-        padding-top: 10%;
-        text-align: center;
-    }
-
-    .hrf-img {
-        height: 418px;
-        width: 800px;
-    }
-
-    .middle-section-text-container {
-        width: 85%;
-        text-align: center;
-        margin: 0 auto;
-        padding-top: 10%;
-    }
-
-    .middle-section-text-container h3 {
-        font-size: 1.9rem;
-        color: @white;
-    }
-
-    .bottom-section h1 {
-        font-size: 3.5rem;
-    }
-
-    .data-container {
-        display: flex;
-        flex-wrap: wrap;
-        width: 100%;
-    }
-
-    .first-data-point-container {
-        width: 85%;
-        margin-bottom: 5%;
-    }
-    .first-data-point-container h2 {
-       font-size: 3.5rem;
-    }
-    .first-data-point-container h3 {
-        font-size: 1.5rem;
-    }
-
-    .second-data-point-container {
-        width: 85%;
-        margin-bottom: 5%;
-    }
-    .second-data-point-container h2 {
-        font-size: 3.5rem;
-     }
-     .second-data-point-container h3 {
-         font-size: 1.5rem;
-     }
-
-    .third-data-point-container {
-        width: 85%;
-        margin-bottom: 5%;
-    }
-    .third-data-point-container h2 {
-        font-size: 3.5rem;
-     }
-     .third-data-point-container h3 {
-         font-size: 1.5rem;
-     }
-
-    .back-to-top {
-        width: 35%;
-    }
-
-    .ant-space-align-center {
-        width: 70%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-
-    }
-}
-
-@media @laptop {
-    .header {
-        height: 35vh;
-    }
-
-    .header-text-container h1 {
-        font-size: 2.8rem;
-        padding-top: 5%;
-    }
-
-    .header-text-container h3 {
-        font-size: 1.4rem;
-        width: 75%;
-        margin: 0 auto;
-    }
-
-    .middle-section {
-        display:flex;
-        width: 100%;
-        justify-content: space-evenly;
-        padding: 0 2%;
-    }
-
-    .hrf-img {
-        height: 318px;
-        width: 608px;
-    }
-
-    .middle-section-text-container {
-        width: 85%;
-        text-align: center;
-        margin: 0 auto;
-        padding: 0 2%;
-    }
-
-   
- .first-data-point-container {
-        width: 23%;
-    }
-
-    .second-data-point-container {
-        width: 23%;
-    }
-
-    .third-data-point-container {
-        width: 23%;
-    }
-    
-    .back-to-top {
-        width: 35%;
-    }
 }
