@@ -76,8 +76,12 @@ function YearLimitsSelect(props) {
   }, 10);
 
   useEffect(() => {
-    updateStateWithNewData(years, view, office, stateSettingFn);
-  });
+    // Use a check to ensure the API call only happens when necessary
+    if (years && years.length > 0) {
+      updateStateWithNewData(years, view, office, stateSettingFn);
+    }
+  }, [years, view, office]); // Ensure these dependencies only change when necessary
+  
 
   return (
     <div
