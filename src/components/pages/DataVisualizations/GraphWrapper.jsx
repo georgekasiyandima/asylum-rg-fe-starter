@@ -51,7 +51,7 @@ function GraphWrapper(props) {
     }
   }
 
-    /*
+  /*
           _                                                                             _
         |                                                                                 |
         |   Example request for once the `/summary` endpoint is up and running:           |
@@ -72,42 +72,60 @@ function GraphWrapper(props) {
                                    -- Mack 
     
     */
-    async function updateStateWithNewData(years, view, office, stateSettingCallback) {
+  async function updateStateWithNewData(
+    years,
+    view,
+    office,
+    stateSettingCallback
+  ) {
     if (office === 'all' || !office) {
-      const citizenshipSummary = await axios
-      .get("https://hrf-asylum-be-b.herokuapp.com/cases/citizenshipSummary", {
-        params: {
-          from: years[0],
-          to: years[1],
-        },
-      });
-      const fiscalSummary = await axios
-      .get("https://hrf-asylum-be-b.herokuapp.com/cases/fiscalSummary", {
-        params: {
-          from: years[0],
-          to: years[1],
-        },
-      });
-      fiscalSummary.data["citizenshipResults"] = citizenshipSummary.data;
+      const citizenshipSummary = await axios.get(
+        'https://hrf-asylum-be-b.herokuapp.com/cases/citizenshipSummary',
+        {
+          params: {
+            from: years[0],
+            to: years[1],
+          },
+        }
+      );
+      const fiscalSummary = await axios.get(
+        'https://hrf-asylum-be-b.herokuapp.com/cases/fiscalSummary',
+        {
+          params: {
+            from: years[0],
+            to: years[1],
+          },
+        }
+      );
+      fiscalSummary.data['citizenshipResults'] = citizenshipSummary.data;
       const combinedData = [fiscalSummary.data];
       stateSettingCallback(view, office, combinedData);
     } else {
-      const citizenshipSummary = await axios
-      .get("https://hrf-asylum-be-b.herokuapp.com/cases/citizenshipSummary", {
-        params: {
-          from: years[0],
-          to: years[1],
-        },
-      });
-      const fiscalSummary = await axios
-      .get("https://hrf-asylum-be-b.herokuapp.com/cases/fiscalSummary", {
-        params: {
-          from: years[0],
-          to: years[1],
-        },
-      });
-      fiscalSummary.data["citizenshipResults"] = citizenshipSummary.data;
+      const citizenshipSummary = await axios.get(
+        'https://hrf-asylum-be-b.herokuapp.com/cases/citizenshipSummary',
+        {
+          params: {
+            from: years[0],
+            to: years[1],
+          },
+        }
+      );
+      console.log('Citizenship Summary:', citizenshipSummary.data);
+      const fiscalSummary = await axios.get(
+        'https://hrf-asylum-be-b.herokuapp.com/cases/fiscalSummary',
+        {
+          params: {
+            from: years[0],
+            to: years[1],
+          },
+        }
+      );
+      console.log('Fiscal Summary:', fiscalSummary.data);
+      //combined data
+      fiscalSummary.data['citizenshipResults'] = citizenshipSummary.data;
       const combinedData = [fiscalSummary.data];
+      console.log('Combined Data:', combinedData);
+      //calling the callback with the combined data
       stateSettingCallback(view, office, combinedData);
     }
   }
